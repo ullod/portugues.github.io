@@ -7,14 +7,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .accordion-content {
-            max-height: 0;
+            height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease-out;
+            transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .accordion-content.active {
-            max-height: 3000px;
-            transition: max-height 0.5s ease-in;
+            /* height será definida via JS */
+            overflow-y: auto;
+            max-height: 80vh;
         }
         
         .card-flip {
@@ -742,19 +743,29 @@
     </div>
 
     <script>
-        // Accordion functionality
+        // Accordion functionality responsivo
         document.querySelectorAll('.accordion-trigger').forEach(trigger => {
             trigger.addEventListener('click', () => {
                 const content = trigger.nextElementSibling;
                 const icon = trigger.querySelector('.accordion-icon');
+                const isActive = content.classList.contains('active');
                 
-                content.classList.toggle('active');
-                
-                if (content.classList.contains('active')) {
-                    icon.textContent = '-';
-                } else {
+                if (isActive) {
+                    content.style.height = 0;
+                    content.classList.remove('active');
                     icon.textContent = '+';
+                } else {
+                    content.classList.add('active');
+                    content.style.height = content.scrollHeight + 'px';
+                    icon.textContent = '-';
                 }
+            });
+        });
+
+        // Garante que ao redimensionar a tela o conteúdo continue visível
+        window.addEventListener('resize', () => {
+            document.querySelectorAll('.accordion-content.active').forEach(content => {
+                content.style.height = content.scrollHeight + 'px';
             });
         });
 
