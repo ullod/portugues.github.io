@@ -9,13 +9,13 @@
         .accordion-content {
             height: 0;
             overflow: hidden;
-            transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .accordion-content.active {
-            /* height será definida via JS */
+            height: auto;
             overflow: visible;
-            height: auto !important;
+            max-height: none;
         }
         
         .card-flip {
@@ -58,12 +58,6 @@
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
-        }
-        
-        /* Garante que o conteúdo dos acordeões tenha espaço suficiente */
-        .accordion-content.active {
-            min-height: fit-content;
-            padding-bottom: 2rem;
         }
         
         /* Melhora o espaçamento interno dos elementos */
@@ -767,22 +761,12 @@
                 const isActive = content.classList.contains('active');
                 
                 if (isActive) {
-                    content.style.height = 0;
                     content.classList.remove('active');
                     icon.textContent = '+';
                 } else {
                     content.classList.add('active');
-                    // Remove qualquer altura fixa para permitir expansão natural
-                    content.style.height = 'auto';
                     icon.textContent = '-';
                 }
-            });
-        });
-
-        // Garante que ao redimensionar a tela o conteúdo continue visível
-        window.addEventListener('resize', () => {
-            document.querySelectorAll('.accordion-content.active').forEach(content => {
-                content.style.height = 'auto';
             });
         });
 
