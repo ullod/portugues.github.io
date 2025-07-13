@@ -14,8 +14,8 @@
         
         .accordion-content.active {
             /* height será definida via JS */
-            overflow-y: auto;
-            max-height: 80vh;
+            overflow: visible;
+            height: auto !important;
         }
         
         .card-flip {
@@ -59,6 +59,22 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        
+        /* Garante que o conteúdo dos acordeões tenha espaço suficiente */
+        .accordion-content.active {
+            min-height: fit-content;
+            padding-bottom: 2rem;
+        }
+        
+        /* Melhora o espaçamento interno dos elementos */
+        .bg-white.p-8 {
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Garante que grids tenham espaço adequado */
+        .grid.md\\:grid-cols-2 {
+            gap: 1.5rem;
+        }
     </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
@@ -81,8 +97,8 @@
                     <span>1. Colocação Pronominal</span>
                     <span class="accordion-icon text-2xl">+</span>
                 </button>
-                <div class="accordion-content px-6 py-6">
-                    <div class="space-y-8">
+                <div class="accordion-content px-6 py-8">
+                    <div class="space-y-10">
                         <p class="text-gray-700 leading-relaxed text-lg">
                             Isso nada mais é do que saber o lugar certo para colocar os pronomes oblíquos átonos (me, te, se, o, a, lhe, nos, vos, os, as, lhes) em relação ao verbo.
                         </p>
@@ -202,8 +218,8 @@
                     <span>2. Complemento Nominal</span>
                     <span class="accordion-icon text-2xl">+</span>
                 </button>
-                <div class="accordion-content px-6 py-6">
-                    <div class="space-y-8">
+                <div class="accordion-content px-6 py-8">
+                    <div class="space-y-10">
                         <p class="text-gray-700 leading-relaxed text-lg">
                             Como o nome diz, ele completa o sentido de um NOME. Não confunda com os complementos do verbo (objeto direto e indireto).
                         </p>
@@ -262,8 +278,8 @@
                     <span>3. Aposto e Vocativo</span>
                     <span class="accordion-icon text-2xl">+</span>
                 </button>
-                <div class="accordion-content px-6 py-6">
-                    <div class="space-y-8">
+                <div class="accordion-content px-6 py-8">
+                    <div class="space-y-10">
                         <p class="text-gray-700 leading-relaxed text-lg">
                             Estes dois são frequentemente confundidos, mas a diferença é simples.
                         </p>
@@ -756,7 +772,8 @@
                     icon.textContent = '+';
                 } else {
                     content.classList.add('active');
-                    content.style.height = content.scrollHeight + 'px';
+                    // Remove qualquer altura fixa para permitir expansão natural
+                    content.style.height = 'auto';
                     icon.textContent = '-';
                 }
             });
@@ -765,7 +782,7 @@
         // Garante que ao redimensionar a tela o conteúdo continue visível
         window.addEventListener('resize', () => {
             document.querySelectorAll('.accordion-content.active').forEach(content => {
-                content.style.height = content.scrollHeight + 'px';
+                content.style.height = 'auto';
             });
         });
 
