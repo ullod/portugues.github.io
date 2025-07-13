@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo de Português - Gramática Essencial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .accordion-content.active {
+            max-height: 3000px;
+            transition: max-height 0.5s ease-in;
+        }
+        
+        .card-flip {
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+        
+        .card-flip.flipped {
+            transform: rotateY(180deg);
+        }
+        
+        .card-front, .card-back {
+            backface-visibility: hidden;
+        }
+        
+        .card-back {
+            transform: rotateY(180deg);
+        }
+        
+        .callout {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .callout-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            margin-top: 0.25rem;
+        }
+        
+        .callout-content {
+            flex: 1;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-6 py-12 max-w-5xl">
+        <!-- Título Principal -->
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">Resumo de Português</h1>
+            <p class="text-xl text-gray-600 leading-relaxed">
+                Uma referência completa e interativa dos principais tópicos da gramática portuguesa. 
+                Explore cada seção, teste seus conhecimentos e domine a língua portuguesa!
+            </p>
+        </header>
+
+        <!-- Accordion Principal -->
+        <div class="space-y-8">
+            
+            <!-- Colocação Pronominal -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <button class="accordion-trigger w-full px-6 py-4 text-left bg-blue-600 text-white font-semibold text-lg hover:bg-blue-700 transition-colors flex justify-between items-center">
+                    <span>1. Colocação Pronominal</span>
+                    <span class="accordion-icon text-2xl">+</span>
+                </button>
+                <div class="accordion-content px-6 py-6">
+                    <div class="space-y-8">
+                        <p class="text-gray-700 leading-relaxed text-lg">
+                            Isso nada mais é do que saber o lugar certo para colocar os pronomes oblíquos átonos (me, te, se, o, a, lhe, nos, vos, os, as, lhes) em relação ao verbo.
+                        </p>
+                        
+                        <div class="callout bg-yellow-50 border-l-4 border-yellow-400 p-8 rounded-r-lg">
+                            <div class="callout-icon">⭐</div>
+                            <div class="callout-content">
+                                <h3 class="font-semibold text-yellow-800 mb-2">Dica Visual</h3>
+                                <p class="text-yellow-700">Pense nos pronomes como "ímãs" e em certas palavras como "metais" que os atraem para perto de si.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Próclise -->
+                        <div class="bg-blue-50 p-8 rounded-lg border-l-4 border-blue-500">
+                            <h3 class="text-xl font-bold text-blue-800 mb-4">A) Próclise (Pronome ANTES do verbo)</h3>
+                            <p class="text-blue-700 mb-4">É o caso mais comum no português do Brasil. O pronome é "puxado" para antes do verbo por "palavras atrativas".</p>
+                            
+                            <h4 class="font-semibold text-blue-800 mb-3">Principais Palavras Atrativas:</h4>
+                            
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h5 class="font-semibold text-gray-800 mb-2">Palavras de negação:</h5>
+                                    <p class="text-gray-700 mb-2">não, nunca, jamais, ninguém</p>
+                                    <p class="text-gray-600 italic">Exemplo: Eu não te contei a novidade.</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h5 class="font-semibold text-gray-800 mb-2">Advérbios:</h5>
+                                    <p class="text-gray-700 mb-2">hoje, ontem, sempre, talvez, aqui</p>
+                                    <p class="text-gray-600 italic">Exemplo: Aqui se vendem livros usados.</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h5 class="font-semibold text-gray-800 mb-2">Pronomes Relativos:</h5>
+                                    <p class="text-gray-700 mb-2">que, quem, onde, cujo</p>
+                                    <p class="text-gray-600 italic">Exemplo: A pessoa que me ajudou era muito gentil.</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h5 class="font-semibold text-gray-800 mb-2">Pronomes Indefinidos:</h5>
+                                    <p class="text-gray-700 mb-2">alguém, todos, ninguém</p>
+                                    <p class="text-gray-600 italic">Exemplo: Alguém nos chamou?</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h5 class="font-semibold text-gray-800 mb-2">Conjunções Subordinativas:</h5>
+                                    <p class="text-gray-700 mb-2">quando, se, porque, conforme</p>
+                                    <p class="text-gray-600 italic">Exemplo: Ele melhorará quando se esforçar.</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h5 class="font-semibold text-gray-800 mb-2">Frases interrogativas ou exclamativas:</h5>
+                                    <p class="text-gray-700 mb-2">perguntas e exclamações</p>
+                                    <p class="text-gray-600 italic">Exemplo: Quem lhe disse isso? Que Deus o ajude!</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Ênclise -->
+                        <div class="bg-green-50 p-8 rounded-lg border-l-4 border-green-500">
+                            <h3 class="text-xl font-bold text-green-800 mb-4">B) Ênclise (Pronome DEPOIS do verbo)</h3>
+                            <p class="text-green-700 mb-4">É a colocação padrão da norma culta, usada quando não há nenhuma palavra atrativa para "puxar" o pronome para antes.</p>
+                            
+                            <h4 class="font-semibold text-green-800 mb-3">Regras para usar a Ênclise:</h4>
+                            
+                            <div class="space-y-4">
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h5 class="font-semibold text-gray-800 mb-2">Verbo iniciando a frase:</h5>
+                                    <p class="text-gray-600 italic">Exemplo: Diga-me a verdade. (Não se inicia frase com pronome átono).</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h5 class="font-semibold text-gray-800 mb-2">Verbo no Imperativo Afirmativo (dando uma ordem):</h5>
+                                    <p class="text-gray-600 italic">Exemplo: Amigo, empreste-me sua caneta.</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h5 class="font-semibold text-gray-800 mb-2">Verbo no Gerúndio (-ando, -endo, -indo):</h5>
+                                    <p class="text-gray-600 italic">Exemplo: Ele saiu, deixando-nos preocupados.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Mesóclise -->
+                        <div class="bg-purple-50 p-8 rounded-lg border-l-4 border-purple-500">
+                            <h3 class="text-xl font-bold text-purple-800 mb-4">C) Mesóclise (Pronome NO MEIO do verbo)</h3>
+                            <p class="text-purple-700 mb-4">É a colocação mais formal e considerada "chique". Só acontece em uma situação específica:</p>
+                            
+                            <div class="callout bg-purple-100 border-l-4 border-purple-400 p-8 rounded-r-lg">
+                                <div class="callout-icon">💡</div>
+                                <div class="callout-content">
+                                    <h4 class="font-semibold text-purple-800 mb-2">Regra:</h4>
+                                    <p class="text-purple-700">Verbo no Futuro do Presente (farei, dirá) ou Futuro do Pretérito (faria, diria), desde que não haja palavra atrativa.</p>
+                                </div>
+                            </div>
+                            
+                            <p class="text-purple-700 mb-4">Como funciona: O verbo é "cortado" ao meio e o pronome entra.</p>
+                            
+                            <div class="bg-white p-4 rounded-lg mb-4">
+                                <p class="text-gray-700"><strong>Convidarei</strong> + <strong>te</strong> = <strong>Convidar-te-ei</strong></p>
+                                <p class="text-gray-700"><strong>Faria</strong> + <strong>me</strong> = <strong>Far-me-ia</strong></p>
+                            </div>
+                            
+                            <h4 class="font-semibold text-purple-800 mb-3">Exemplos:</h4>
+                            <div class="space-y-2">
+                                <p class="text-gray-700">• A prova <strong>realizar-se-á</strong> amanhã. (Futuro do Presente)</p>
+                                <p class="text-gray-700">• Ele <strong>entregar-lhe-ia</strong> o presente, se pudesse. (Futuro do Pretérito)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Complemento Nominal -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <button class="accordion-trigger w-full px-6 py-4 text-left bg-green-600 text-white font-semibold text-lg hover:bg-green-700 transition-colors flex justify-between items-center">
+                    <span>2. Complemento Nominal</span>
+                    <span class="accordion-icon text-2xl">+</span>
+                </button>
+                <div class="accordion-content px-6 py-6">
+                    <div class="space-y-8">
+                        <p class="text-gray-700 leading-relaxed text-lg">
+                            Como o nome diz, ele completa o sentido de um NOME. Não confunda com os complementos do verbo (objeto direto e indireto).
+                        </p>
+                        
+                        <div class="callout bg-yellow-50 border-l-4 border-yellow-400 p-8 rounded-r-lg">
+                            <div class="callout-icon">⭐</div>
+                            <div class="callout-content">
+                                <h3 class="font-semibold text-yellow-800 mb-2">Dica de Ouro</h3>
+                                <p class="text-yellow-700">O Complemento Nominal sempre se liga ao nome através de uma preposição (de, a, com, em, por, etc.).</p>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-green-800 mb-4">Ele pode completar o sentido de:</h3>
+                        
+                        <div class="space-y-6">
+                            <!-- Substantivo Abstrato -->
+                            <div class="bg-green-50 p-8 rounded-lg border-l-4 border-green-500">
+                                <h4 class="text-lg font-bold text-green-800 mb-3">Um Substantivo Abstrato:</h4>
+                                <div class="space-y-3">
+                                    <div class="bg-white p-4 rounded-lg">
+                                        <p class="text-gray-700 mb-2"><strong>Exemplo:</strong> Tenho necessidade de ajuda.</p>
+                                        <p class="text-gray-600 italic">("de ajuda" completa o sentido do substantivo "necessidade")</p>
+                                    </div>
+                                    <div class="bg-white p-4 rounded-lg">
+                                        <p class="text-gray-700 mb-2"><strong>Exemplo:</strong> A defesa do réu foi brilhante.</p>
+                                        <p class="text-gray-600 italic">("do réu" completa o sentido de "defesa")</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Adjetivo -->
+                            <div class="bg-blue-50 p-8 rounded-lg border-l-4 border-blue-500">
+                                <h4 class="text-lg font-bold text-blue-800 mb-3">Um Adjetivo:</h4>
+                                <div class="bg-white p-4 rounded-lg">
+                                    <p class="text-gray-700 mb-2"><strong>Exemplo:</strong> Este livro é útil para o estudo.</p>
+                                    <p class="text-gray-600 italic">("para o estudo" completa o sentido do adjetivo "útil")</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Advérbio -->
+                            <div class="bg-purple-50 p-8 rounded-lg border-l-4 border-purple-500">
+                                <h4 class="text-lg font-bold text-purple-800 mb-3">Um Advérbio:</h4>
+                                <div class="bg-white p-4 rounded-lg">
+                                    <p class="text-gray-700 mb-2"><strong>Exemplo:</strong> A professora agiu favoravelmente aos alunos.</p>
+                                    <p class="text-gray-600 italic">("aos alunos" completa o sentido do advérbio "favoravelmente")</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aposto -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <button class="accordion-trigger w-full px-6 py-4 text-left bg-purple-600 text-white font-semibold text-lg hover:bg-purple-700 transition-colors flex justify-between items-center">
+                    <span>3. Aposto e Vocativo</span>
+                    <span class="accordion-icon text-2xl">+</span>
+                </button>
+                <div class="accordion-content px-6 py-6">
+                    <div class="space-y-8">
+                        <p class="text-gray-700 leading-relaxed text-lg">
+                            Estes dois são frequentemente confundidos, mas a diferença é simples.
+                        </p>
+                        
+                        <!-- Aposto -->
+                        <div class="bg-purple-50 p-8 rounded-lg border-l-4 border-purple-500">
+                            <h3 class="text-xl font-bold text-purple-800 mb-4">Aposto (O "Explicador")</h3>
+                            <p class="text-purple-700 mb-4">É um termo que explica, resume, enumera ou especifica outro termo da oração. Pense nele como uma "nota de rodapé" no meio da frase. Geralmente, vem entre vírgulas.</p>
+                            
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h4 class="font-semibold text-gray-800 mb-3">Tipos de Aposto:</h4>
+                                    <div class="space-y-3">
+                                        <div>
+                                            <p class="font-semibold text-gray-800">Explicativo:</p>
+                                            <p class="text-gray-700 italic">Jorge Amado, grande escritor baiano, marcou a literatura.</p>
+                                            <p class="text-gray-600 text-sm">(Explica quem é Jorge Amado)</p>
+                                        </div>
+                                        <div>
+                                            <p class="font-semibold text-gray-800">Enumerativo:</p>
+                                            <p class="text-gray-700 italic">Na feira, comprei três frutas: laranja, banana e maçã.</p>
+                                            <p class="text-gray-600 text-sm">(Enumera quais foram as frutas)</p>
+                                        </div>
+                                        <div>
+                                            <p class="font-semibold text-gray-800">Resumidor:</p>
+                                            <p class="text-gray-700 italic">Amigos, família, trabalho, tudo o preocupava.</p>
+                                            <p class="text-gray-600 text-sm">(Resume os termos anteriores)</p>
+                                        </div>
+                                        <div>
+                                            <p class="font-semibold text-gray-800">Especificativo:</p>
+                                            <p class="text-gray-700 italic">O rio São Francisco é muito importante para o Nordeste.</p>
+                                            <p class="text-gray-600 text-sm">(Especifica qual rio. Atenção: este tipo não usa vírgulas!)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Vocativo -->
+                        <div class="bg-red-50 p-8 rounded-lg border-l-4 border-red-500">
+                            <h3 class="text-xl font-bold text-red-800 mb-4">Vocativo (O "Chamado")</h3>
+                            <p class="text-red-700 mb-4">É um termo usado para chamar, invocar ou interpelar alguém ou algo. Ele não pertence à estrutura da oração (não é sujeito nem predicado) e está sempre separado por vírgula.</p>
+                            
+                            <div class="callout bg-red-100 border-l-4 border-red-400 p-8 rounded-r-lg">
+                                <div class="callout-icon">⭐</div>
+                                <div class="callout-content">
+                                    <h4 class="font-semibold text-red-800 mb-2">Dica de Ouro</h4>
+                                    <p class="text-red-700">Se você consegue colocar um "Ó" ou "Ô" na frente, é um vocativo.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h4 class="font-semibold text-gray-800 mb-3">Exemplos:</h4>
+                                    <div class="space-y-2">
+                                        <p class="text-gray-700">• Mãe, posso sair hoje? (Equivale a: "Ô, mãe, posso sair?")</p>
+                                        <p class="text-gray-700">• A lição, meus caros alunos, é sobre perseverança.</p>
+                                        <p class="text-gray-700">• Não faça isso, menino!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="callout bg-blue-50 border-l-4 border-blue-400 p-8 rounded-r-lg">
+                            <div class="callout-icon">👀</div>
+                            <div class="callout-content">
+                                <h3 class="font-semibold text-blue-800 mb-2">A Grande Diferença</h3>
+                                <p class="text-blue-700">O aposto se refere a um termo da oração para explicá-lo. O vocativo é um chamado, uma "conversa" com o interlocutor, e é independente do resto da frase.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- Seção de Atividades -->
+        <section class="mt-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-10 text-center">Atividades Interativas</h2>
+            <p class="text-gray-600 text-center mb-10">Teste seus conhecimentos! Clique em "Revelar Resposta" para ver a explicação.</p>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Atividade 1 -->
+                <div class="card-flip bg-white rounded-lg shadow-md p-6">
+                    <div class="card-front">
+                        <h3 class="font-semibold text-lg mb-4">Questão 1</h3>
+                        <p class="text-gray-700 mb-4">Qual frase utiliza a colocação pronominal INCORRETA segundo a norma culta?</p>
+                        <div class="space-y-2 mb-4">
+                            <label class="flex items-center">
+                                <input type="radio" name="q1" value="a" class="mr-2">
+                                <span>A) Nunca me disseram a verdade.</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q1" value="b" class="mr-2">
+                                <span>B) Far-lhe-ei uma visita amanhã.</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q1" value="c" class="mr-2">
+                                <span>C) Me empresta seu lápis, por favor?</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q1" value="d" class="mr-2">
+                                <span>D) O assunto que nos preocupa é sério.</span>
+                            </label>
+                        </div>
+                        <button class="reveal-btn bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
+                            Revelar Resposta
+                        </button>
+                    </div>
+                    <div class="card-back">
+                        <h3 class="font-semibold text-lg mb-4 text-green-600">Resposta Correta: C) Me empresta seu lápis, por favor?</h3>
+                        <p class="text-gray-700 mb-4">
+                            <strong>Justificativa:</strong> O correto, na norma culta, é "Empresta-me", pois não se inicia frase com pronome oblíquo átono.
+                        </p>
+                        <button class="flip-back bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition-colors">
+                            Voltar à Questão
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Atividade 2 -->
+                <div class="card-flip bg-white rounded-lg shadow-md p-6">
+                    <div class="card-front">
+                        <h3 class="font-semibold text-lg mb-4">Questão 2</h3>
+                        <p class="text-gray-700 mb-4">Na frase "Tenho orgulho de você", o termo destacado é:</p>
+                        <div class="space-y-2 mb-4">
+                            <label class="flex items-center">
+                                <input type="radio" name="q2" value="a" class="mr-2">
+                                <span>A) Objeto Indireto</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q2" value="b" class="mr-2">
+                                <span>B) Objeto Direto</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q2" value="c" class="mr-2">
+                                <span>C) Complemento Nominal</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q2" value="d" class="mr-2">
+                                <span>D) Aposto</span>
+                            </label>
+                        </div>
+                        <button class="reveal-btn bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
+                            Revelar Resposta
+                        </button>
+                    </div>
+                    <div class="card-back">
+                        <h3 class="font-semibold text-lg mb-4 text-green-600">Resposta Correta: C) Complemento Nominal</h3>
+                        <p class="text-gray-700 mb-4">
+                            <strong>Justificativa:</strong> Completa o sentido do substantivo abstrato "orgulho".
+                        </p>
+                        <button class="flip-back bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition-colors">
+                            Voltar à Questão
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Atividade 3 -->
+                <div class="card-flip bg-white rounded-lg shadow-md p-6">
+                    <div class="card-front">
+                        <h3 class="font-semibold text-lg mb-4">Questão 3</h3>
+                        <p class="text-gray-700 mb-4">Identifique a função do termo destacado em: "Ó, meu Deus, por que isso aconteceu?"</p>
+                        <div class="space-y-2 mb-4">
+                            <label class="flex items-center">
+                                <input type="radio" name="q3" value="a" class="mr-2">
+                                <span>A) Sujeito</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q3" value="b" class="mr-2">
+                                <span>B) Aposto</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q3" value="c" class="mr-2">
+                                <span>C) Vocativo</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q3" value="d" class="mr-2">
+                                <span>D) Objeto Direto</span>
+                            </label>
+                        </div>
+                        <button class="reveal-btn bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
+                            Revelar Resposta
+                        </button>
+                    </div>
+                    <div class="card-back">
+                        <h3 class="font-semibold text-lg mb-4 text-green-600">Resposta Correta: C) Vocativo</h3>
+                        <p class="text-gray-700 mb-4">
+                            <strong>Justificativa:</strong> É um chamado, uma invocação a "meu Deus".
+                        </p>
+                        <button class="flip-back bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition-colors">
+                            Voltar à Questão
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Atividade 4 -->
+                <div class="card-flip bg-white rounded-lg shadow-md p-6">
+                    <div class="card-front">
+                        <h3 class="font-semibold text-lg mb-4">Questão 4</h3>
+                        <p class="text-gray-700 mb-4">Em "Machado de Assis, o bruxo do Cosme Velho, é um gênio da literatura", o termo destacado é um:</p>
+                        <div class="space-y-2 mb-4">
+                            <label class="flex items-center">
+                                <input type="radio" name="q4" value="a" class="mr-2">
+                                <span>A) Vocativo</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q4" value="b" class="mr-2">
+                                <span>B) Sujeito</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q4" value="c" class="mr-2">
+                                <span>C) Complemento Nominal</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q4" value="d" class="mr-2">
+                                <span>D) Aposto Explicativo</span>
+                            </label>
+                        </div>
+                        <button class="reveal-btn bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
+                            Revelar Resposta
+                        </button>
+                    </div>
+                    <div class="card-back">
+                        <h3 class="font-semibold text-lg mb-4 text-green-600">Resposta Correta: D) Aposto Explicativo</h3>
+                        <p class="text-gray-700 mb-4">
+                            <strong>Justificativa:</strong> Explica quem é Machado de Assis.
+                        </p>
+                        <button class="flip-back bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition-colors">
+                            Voltar à Questão
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Atividade 5 -->
+                <div class="card-flip bg-white rounded-lg shadow-md p-6">
+                    <div class="card-front">
+                        <h3 class="font-semibold text-lg mb-4">Questão 5</h3>
+                        <p class="text-gray-700 mb-4">Assinale a alternativa em que a ênclise (pronome depois do verbo) foi usada corretamente:</p>
+                        <div class="space-y-2 mb-4">
+                            <label class="flex items-center">
+                                <input type="radio" name="q5" value="a" class="mr-2">
+                                <span>A) Se realizará o evento na praça.</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q5" value="b" class="mr-2">
+                                <span>B) Talvez, encontre-o mais tarde.</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q5" value="c" class="mr-2">
+                                <span>C) Entregue-me os documentos agora.</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q5" value="d" class="mr-2">
+                                <span>D) Não vende-se esta casa.</span>
+                            </label>
+                        </div>
+                        <button class="reveal-btn bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
+                            Revelar Resposta
+                        </button>
+                    </div>
+                    <div class="card-back">
+                        <h3 class="font-semibold text-lg mb-4 text-green-600">Resposta Correta: C) Entregue-me os documentos agora.</h3>
+                        <p class="text-gray-700 mb-4">
+                            <strong>Justificativa:</strong> Verbo no imperativo afirmativo, caso de ênclise.
+                        </p>
+                        <button class="flip-back bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition-colors">
+                            Voltar à Questão
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Atividade 6 -->
+                <div class="card-flip bg-white rounded-lg shadow-md p-6">
+                    <div class="card-front">
+                        <h3 class="font-semibold text-lg mb-4">Questão 6</h3>
+                        <p class="text-gray-700 mb-4">"A construção da ponte foi um desafio para os engenheiros". O termo "da ponte" completa o sentido de qual palavra?</p>
+                        <div class="space-y-2 mb-4">
+                            <label class="flex items-center">
+                                <input type="radio" name="q6" value="a" class="mr-2">
+                                <span>A) construção (substantivo)</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q6" value="b" class="mr-2">
+                                <span>B) foi (verbo)</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q6" value="c" class="mr-2">
+                                <span>C) desafio (substantivo)</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q6" value="d" class="mr-2">
+                                <span>D) engenheiros (substantivo)</span>
+                            </label>
+                        </div>
+                        <button class="reveal-btn bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
+                            Revelar Resposta
+                        </button>
+                    </div>
+                    <div class="card-back">
+                        <h3 class="font-semibold text-lg mb-4 text-green-600">Resposta Correta: A) construção (substantivo)</h3>
+                        <p class="text-gray-700 mb-4">
+                            <strong>Justificativa:</strong> "Da ponte" completa o sentido de "construção", que é um substantivo abstrato.
+                        </p>
+                        <button class="flip-back bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition-colors">
+                            Voltar à Questão
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Atividade 7 -->
+                <div class="card-flip bg-white rounded-lg shadow-md p-6">
+                    <div class="card-front">
+                        <h3 class="font-semibold text-lg mb-4">Questão 7</h3>
+                        <p class="text-gray-700 mb-4">Qual das frases abaixo contém um vocativo?</p>
+                        <div class="space-y-2 mb-4">
+                            <label class="flex items-center">
+                                <input type="radio" name="q7" value="a" class="mr-2">
+                                <span>A) O professor João faltou hoje.</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q7" value="b" class="mr-2">
+                                <span>B) Amigos, a vida é uma jornada.</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q7" value="c" class="mr-2">
+                                <span>C) A cidade do Rio de Janeiro é linda.</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q7" value="d" class="mr-2">
+                                <span>D) Comprei o essencial: pão, queijo e café.</span>
+                            </label>
+                        </div>
+                        <button class="reveal-btn bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
+                            Revelar Resposta
+                        </button>
+                    </div>
+                    <div class="card-back">
+                        <h3 class="font-semibold text-lg mb-4 text-green-600">Resposta Correta: B) Amigos, a vida é uma jornada.</h3>
+                        <p class="text-gray-700 mb-4">
+                            <strong>Justificativa:</strong> Está chamando os "Amigos".
+                        </p>
+                        <button class="flip-back bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition-colors">
+                            Voltar à Questão
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Atividade 8 -->
+                <div class="card-flip bg-white rounded-lg shadow-md p-6">
+                    <div class="card-front">
+                        <h3 class="font-semibold text-lg mb-4">Questão 8</h3>
+                        <p class="text-gray-700 mb-4">A mesóclise (pronome no meio do verbo) seria aplicada corretamente em qual das frases abaixo?</p>
+                        <div class="space-y-2 mb-4">
+                            <label class="flex items-center">
+                                <input type="radio" name="q8" value="a" class="mr-2">
+                                <span>A) (Eu te contarei) o segredo.</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q8" value="b" class="mr-2">
+                                <span>B) (Eu nunca te contaria) o segredo.</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q8" value="c" class="mr-2">
+                                <span>C) (Ele se machucou) ontem.</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q8" value="d" class="mr-2">
+                                <span>D) (Nós nos encontramos) na festa.</span>
+                            </label>
+                        </div>
+                        <button class="reveal-btn bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
+                            Revelar Resposta
+                        </button>
+                    </div>
+                    <div class="card-back">
+                        <h3 class="font-semibold text-lg mb-4 text-green-600">Resposta Correta: A) (Eu te contarei) o segredo.</h3>
+                        <p class="text-gray-700 mb-4">
+                            <strong>Justificativa:</strong> Contar-te-ei o segredo. (Verbo no futuro do presente sem palavra atrativa).
+                        </p>
+                        <button class="flip-back bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition-colors">
+                            Voltar à Questão
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Atividade 9 -->
+                <div class="card-flip bg-white rounded-lg shadow-md p-6">
+                    <div class="card-front">
+                        <h3 class="font-semibold text-lg mb-4">Questão 9</h3>
+                        <p class="text-gray-700 mb-4">"Ele é um homem fiel aos seus princípios". O termo "aos seus princípios" é um complemento nominal porque completa o sentido de:</p>
+                        <div class="space-y-2 mb-4">
+                            <label class="flex items-center">
+                                <input type="radio" name="q9" value="a" class="mr-2">
+                                <span>A) homem (substantivo)</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q9" value="b" class="mr-2">
+                                <span>B) é (verbo)</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q9" value="c" class="mr-2">
+                                <span>C) fiel (adjetivo)</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q9" value="d" class="mr-2">
+                                <span>D) um (artigo)</span>
+                            </label>
+                        </div>
+                        <button class="reveal-btn bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
+                            Revelar Resposta
+                        </button>
+                    </div>
+                    <div class="card-back">
+                        <h3 class="font-semibold text-lg mb-4 text-green-600">Resposta Correta: C) fiel (adjetivo)</h3>
+                        <p class="text-gray-700 mb-4">
+                            <strong>Justificativa:</strong> "Aos seus princípios" completa o sentido do adjetivo "fiel".
+                        </p>
+                        <button class="flip-back bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition-colors">
+                            Voltar à Questão
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Atividade 10 -->
+                <div class="card-flip bg-white rounded-lg shadow-md p-6">
+                    <div class="card-front">
+                        <h3 class="font-semibold text-lg mb-4">Questão 10</h3>
+                        <p class="text-gray-700 mb-4">Diferencie o termo destacado nas duas frases:</p>
+                        <p class="text-gray-600 mb-4">I. Maria, venha jantar!<br>II. Maria, a aluna mais dedicada, passou em primeiro lugar.</p>
+                        <div class="space-y-2 mb-4">
+                            <label class="flex items-center">
+                                <input type="radio" name="q10" value="a" class="mr-2">
+                                <span>A) I é vocativo, II é aposto.</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q10" value="b" class="mr-2">
+                                <span>B) I é aposto, II é vocativo.</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q10" value="c" class="mr-2">
+                                <span>C) Ambos são vocativos.</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q10" value="d" class="mr-2">
+                                <span>D) Ambos são apostos.</span>
+                            </label>
+                        </div>
+                        <button class="reveal-btn bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
+                            Revelar Resposta
+                        </button>
+                    </div>
+                    <div class="card-back">
+                        <h3 class="font-semibold text-lg mb-4 text-green-600">Resposta Correta: A) I é vocativo, II é aposto.</h3>
+                        <p class="text-gray-700 mb-4">
+                            <strong>Justificativa:</strong> Em I, está chamando Maria. Em II, está explicando quem é Maria.
+                        </p>
+                        <button class="flip-back bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition-colors">
+                            Voltar à Questão
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Premium -->
+        <section class="mt-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg p-8 text-center text-white">
+            <h2 class="text-3xl font-bold mb-4">Gostou deste resumo?</h2>
+            <p class="text-xl mb-6 opacity-90">
+                Torne-se Premium para ter acesso a dezenas de outros conteúdos interativos como este!
+            </p>
+            <button class="bg-white text-purple-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors text-lg">
+                Quero ser Premium
+            </button>
+        </section>
+    </div>
+
+    <script>
+        // Accordion functionality
+        document.querySelectorAll('.accordion-trigger').forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const content = trigger.nextElementSibling;
+                const icon = trigger.querySelector('.accordion-icon');
+                
+                content.classList.toggle('active');
+                
+                if (content.classList.contains('active')) {
+                    icon.textContent = '-';
+                } else {
+                    icon.textContent = '+';
+                }
+            });
+        });
+
+        // Card flip functionality
+        document.querySelectorAll('.reveal-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const card = btn.closest('.card-flip');
+                card.classList.add('flipped');
+            });
+        });
+
+        document.querySelectorAll('.flip-back').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const card = btn.closest('.card-flip');
+                card.classList.remove('flipped');
+            });
+        });
+
+        // Add fade-in animation to cards
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.card-flip');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('fade-in');
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>
